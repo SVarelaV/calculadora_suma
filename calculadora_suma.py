@@ -1,3 +1,28 @@
+"""
+Calculadora que solo suma:
+    Una pantalla donde se van escribiendo los números.
+    Botones para los números del 0 al 9.
+    Un botón para el signo más (+).
+    Un botón para el signo de igual (=) para ver el resultado.
+    Un botón para borrar (C) por si nos equivocamos.
+Cuando aprietas un número, operación “+” y otro número, se va mostrando en la pantalla.
+Cuando le das al "=", nos da el resultado
+
+Función: click_boton (cuando se presiona un botón con un número)
+    Mostrar en la pantalla de la calculadora los números que se van a sumar y el signo suma.
+        Obtener el valor actual de la pantalla
+        entrada_actual = obtener valor actual de entrada
+    Concatenar el valor actual con el nuevo valor
+        nuevo_texto = entrada_actual + texto_valor
+
+Función: borrar (cuando se presiona el botón de borrar)
+    Poner la pantalla de la calculadora en blanco (sin nada escrito).
+        establecer entrada a una cadena vacía ("")
+Función: sumar (cuando se presiona el botón de igual)
+    Calcular el resultado de la suma que está escrita en la pantalla.
+    Mostrar el resultado de ese cálculo en la pantalla.
+"""
+
 from tkinter import *
 
 def click_boton(valor):
