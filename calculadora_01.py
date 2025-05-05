@@ -1,25 +1,25 @@
 import tkinter as tk
 
 class CalculadoraSuma:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Calculadora de Suma")
+    def __init__(self, ventana):
+        self.ventana = ventana
+        self.ventana.title("Calculadora de Suma")
         self.numeros = []  # Lista para almacenar los números ingresados
         self.numero_actual = ""  # Número que se está formando
 
         # Etiqueta para mostrar los números ingresados
-        self.display = tk.Label(root, text="", font=("Arial", 20), bg="white", anchor="e", relief="sunken", width=15)
+        self.display = tk.Label(ventana, text="", font=("Arial", 20), bg="white", anchor="e", relief="sunken", width=15)
         self.display.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
         # Crear botones numéricos (0-9)
         for i in range(10):
-            boton = tk.Button(root, text=str(i), font=("Arial", 18), command=lambda i=i: self.agregar_numero(i), width=5, height=2)
+            boton = tk.Button(ventana, text=str(i), font=("Arial", 18), command=lambda i=i: self.agregar_numero(i), width=5, height=2)
             fila = (i - 1) // 3 + 1 if i != 0 else 4
             columna = (i - 1) % 3 if i != 0 else 1
             boton.grid(row=fila, column=columna, padx=5, pady=5)
 
         # Botón de resultado
-        boton_resultado = tk.Button(root, text="Resultado", font=("Arial", 18), command=self.mostrar_resultado, width=15, height=2, bg="lightblue")
+        boton_resultado = tk.Button(ventana, text="Resultado", font=("Arial", 18), command=self.mostrar_resultado, width=15, height=2, bg="lightblue")
         boton_resultado.grid(row=5, column=0, columnspan=3, padx=5, pady=10)
 
     def agregar_numero(self, numero):
